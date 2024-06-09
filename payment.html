@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css">
+  <script type="text/javascript" src="index.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
+<body onload="LoadMenuInfo(); displayProduct();">
+
+  <span id="navigator"></span>
+ 
+ <div class="container">
+  <h2 class="title">Payment Page</h2>
+  <div id="product-details">
+    <!-- Product details will be loaded here -->
+  </div>
+  <form action="payment_processing.php" method="POST">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="card">Credit Card:</label>
+      <input type="text" class="form-control" id="card" name="card" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Pay Now</button>
+  </form>
+</div>
+
+<script>
+function displayProduct() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const product = urlParams.get('product');
+  const productDetails = {
+    HTML: 'HTML tutorials - $25.00',
+    CSS: 'CSS Tutorials - $25.00',
+    Python: 'Python tutorials - $25.00',
+    ChatGPT: 'ChatGPT tutorials - $25.00',
+    Jquery: 'Jquery Tutorials - $25.00',
+    Bootstrap: 'Bootstrap guide - $25.00',
+	Javascript: 'Javascript guide - $20.00'
+  };
+
+  document.getElementById('product-details').innerHTML = `<h3>${productDetails[product]}</h3>`;
+}
+</script>
+
+</body>
+</html>
