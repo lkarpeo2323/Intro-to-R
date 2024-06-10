@@ -1,36 +1,6 @@
 p{
 	color: #555;
 }
-.container{
-	max-width: 1300px;
-	margin: auto;
-	padding-left: 25px;
-	padding-right: 25px;
-}
-
-.row{
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	justify-content: space-around;
-}
-
-.col-2{
-	flex-basis: 50%;
-	min-width: 300px;
-}
-
-.col-2 img{
-	max-width: 100%;
-	padding: 50px 0;
-}
-
-.col-2 h1{
-	font-size: 50px;
-	line-height: 60px;
-	margin: 25px 0;
-}
-
 .btn{
 	display: inline-block;
 	background: #ff523b;
@@ -42,7 +12,7 @@ p{
 
 
 
-table{
+.featured-products{
 	max-width: 1080px;
 	margin: auto;
 	padding-left: 25px;
@@ -83,8 +53,6 @@ h4{
 	font-weight: normal;
 }
 
-
-
 .rating .fa{
 	color: #ff523b;
 }
@@ -93,17 +61,13 @@ h4{
 	transform: translateY(-5px);
 }
 
-
-/* Offer */
-
-
 .offer{
 	background-color: cyan;
 	margin-top: 80px;
 	padding: 30px 0;
 }
 
-.col-2 .offer-img{
+.offer-img{
 	padding: 50px;
 }
 
