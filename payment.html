@@ -50,13 +50,13 @@ function displayProduct() {
   const urlParams = new URLSearchParams(window.location.search);
   const product = urlParams.get('product');
   const productDetails = {
-    HTML: 'HTML tutorials - $25.00',
-    CSS: 'CSS Tutorials - $25.00',
-    Python: 'Python tutorials - $25.00',
-    ChatGPT: 'ChatGPT tutorials - $25.00',
-    Jquery: 'Jquery Tutorials - $25.00',
-    Bootstrap: 'Bootstrap guide - $25.00',
-	Javascript: 'Javascript guide - $20.00'
+    HTML: 'HTML tutorials for free',
+    CSS: 'CSS Tutorials for free',
+    Python: 'Python tutorials for free',
+    ChatGPT: 'ChatGPT tutorials for free',
+    Jquery: 'Jquery Tutorials for free',
+    Bootstrap: 'Bootstrap guide for free',
+	Javascript: 'Javascript guide for free'
   };
 
   document.getElementById('product-details').innerHTML = `<h3>${productDetails[product]}</h3>`;
