@@ -6,7 +6,7 @@ MyMenu += '    <nav class="navbar navbar-inverse">';
 MyMenu += ' 		<div class="container">';
 MyMenu += ' 			<ul class="nav navbar-nav navbar-right">';
 MyMenu += '					<li><a class="glyphicon glyphicon-home" href="coding-tutor-home"> Home</a></li>';
-MyMenu += '					<li><a class="glyphicon glyphicon-shopping-cart" href="coding-tutor-products-for-free"> Products</a></li>';
+MyMenu += '					<li><a class="glyphicon glyphicon-shopping-cart" href="Products.html"> Products</a></li>';
 MyMenu += '				</ul>';
 MyMenu += '			</div>';
 MyMenu += '		</nav>';
