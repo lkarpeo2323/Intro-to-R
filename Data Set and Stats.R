@@ -1,11 +1,13 @@
 Data_Cars <- mtcars
 
+#Prints the dataset
+Data_Cars
+
 #Max of HP
-which.max(Data_Cars$hp)
+max(Data_Cars$hp)
 
 #Min of HP
-which.min(Data_Cars$hp)
-
+min(Data_Cars$hp)
 
 #mean of HP
 mean(Data_Cars$hp)
