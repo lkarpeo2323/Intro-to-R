@@ -8,9 +8,6 @@ Data_Frame <- data.frame(
 # Print the data frame
 print(Data_Frame)
 
-# Pie Chart with Pulse column
-pie(Data_Frame$Pulse, labels = Data_Frame$Training)
-
 
 #Bar Chart with pulse column
 barplot(Data_Frame$Pulse, names.arg = Data_Frame$Training)
