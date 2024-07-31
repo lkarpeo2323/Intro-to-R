@@ -1,2 +1,0 @@
-# Codingtutor
-Coding Tutor
