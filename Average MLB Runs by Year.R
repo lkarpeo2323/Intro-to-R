@@ -1,5 +1,3 @@
-install.package("Lahman")
-
 library(Lahman)
 library(dplyr)
 library(ggplot2)
