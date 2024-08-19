@@ -8,7 +8,7 @@ library(caret)
 teams <- Teams
 
 teams <- teams %>%
-  mutate(runs_game = R / (W + L))
+  mutate(runs_game = R / (W + L)) #runs_game is defined
 
 teams_year <- teams %>%
   group_by(yearID) %>%
