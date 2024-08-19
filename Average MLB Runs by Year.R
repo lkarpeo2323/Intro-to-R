@@ -27,3 +27,12 @@ teams_year %>%
   ggtitle('Average MLB Runs by Year')
 head(teams_year)
 
+
+
+## Predict Wins by Team ##
+
+df_clean <- teams %>%
+  select(name,yearID, W, L, R, H, HR, SO, RA) %>%
+  filter(yearID >= 2010)
+
+head(df_clean)
