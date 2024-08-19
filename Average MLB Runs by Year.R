@@ -5,12 +5,20 @@ library(caret)
 
 teams <- Teams
 
+
+## runs_game is defined ##
+
 teams <- teams %>%
   mutate(runs_game = R / (W + L)) #runs_game is defined
+
+## mean_runs is defined ##
 
 teams_year <- teams %>%
   group_by(yearID) %>%
   summarize(mean_runs = mean(runs_game, na.rm=TRUE))
+
+
+## drawing the graph ##
 
 teams_year %>%
   ggplot(aes(x=yearID,y=mean_runs)) +
