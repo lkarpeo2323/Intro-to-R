@@ -25,7 +25,10 @@ reg = lm(b~a)
 
 reg
 
+library(psych) #importting the 'psych library'
 #Correlation Test
 corr.test(a,b)
+
+
 
 
