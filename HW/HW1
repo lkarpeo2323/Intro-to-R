@@ -10,9 +10,14 @@ t = 20
 a = (p)*(1+(r/n))**(n*t)
 print(a)
 
-
-
 #Method 2: Use a function with variables as parameters
+
+compound_interest <- function(p,r,n,t){
+  a = (p)*(1+(r/n))**(n*t)
+  print(a)
+}
+
+compound_interest(100,.1,12,20)
 
 
 
