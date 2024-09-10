@@ -1,6 +1,6 @@
-squared <- function(x){
-  y = x^2
-  print(y)
+squared <- function(x,z){
+  y = x^2 +z 
+  return(y)
 }
 
 squared(8)
