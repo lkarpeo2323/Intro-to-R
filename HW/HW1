@@ -1,0 +1,18 @@
+#Method 1: Give each Variable a Value and print
+
+p = 100
+r = .1
+n = 12
+t = 20
+
+
+
+a = (p)*(1+(r/n))**(n*t)
+print(a)
+
+
+
+#Method 2: Use a function with variables as parameters
+
+
+
