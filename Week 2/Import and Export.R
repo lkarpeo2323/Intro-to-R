@@ -14,9 +14,9 @@ Class
 
 
 #Read Table
-##Keep data file in same folder as R file
+##Keep Data file in same folder as R file
 
-data = read.table("Amazon.txt")
+data = read.table("Amazon.txt",header=TRUE)
 print(data)
 
 
