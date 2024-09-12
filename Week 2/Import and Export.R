@@ -13,6 +13,14 @@ Class
 
 
 
+#Read Table
+##Keep data file in same folder as R file
+
+data = read.table("Amazon.txt")
+print(data)
+
+
+
 
 
 
