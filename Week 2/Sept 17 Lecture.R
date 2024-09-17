@@ -34,12 +34,12 @@ max(data$Household.Income)
 
 2 #numeric
 2.3 #numeric
-hello
-‘hello’
-“hello”
-TRUE
-True
-“TRUE”
-T
+hello #Error
+‘hello’ #character
+“hello” #Character
+TRUE #Logical
+True #Error
+“TRUE” #Error
+T #Error
 
 
