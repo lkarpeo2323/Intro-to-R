@@ -6,3 +6,15 @@ Class = data.frame(Student,Grade)
 Class
 
 write.csv(Class,"output.csv",row.names=FALSE)
+
+
+
+#Exersise 3
+
+data = read.csv('Professional.csv')
+names(data)
+class(data)
+str(data)
+head(data, n=5)
+tail(data, n=5)
+mean(data$age)
