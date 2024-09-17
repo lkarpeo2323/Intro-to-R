@@ -30,3 +30,16 @@ max(data$Age)
 max(data$Household.Income)
 
 
+#Exercise 1 
+
+2 #numeric
+2.3 #numeric
+hello
+‘hello’
+“hello”
+TRUE
+True
+“TRUE”
+T
+
+
