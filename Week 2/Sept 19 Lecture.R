@@ -14,3 +14,10 @@ division
 
 #Exercise 4
 
+list.price = 188
+
+discounts = seq(.1, .8, .1) 
+
+dis.price = list.price * (1 - discounts)
+
+dis.price
