@@ -9,3 +9,14 @@ lowest = sorted[1:3]
 lowest
 z = lowest[c(1,3)]
 z
+
+
+#Exercise 8
+
+list.price = 188
+
+discounts = seq(.1, .8, .1) 
+
+dis.price = list.price * (1 - discounts)
+
+select.1 = dis.price [50:100]
