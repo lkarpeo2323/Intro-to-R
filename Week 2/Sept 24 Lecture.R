@@ -18,8 +18,11 @@ list.price = 188
 discounts = seq(.1, .8, .1) 
 dis.price = list.price * (1 - discounts)
 
+#which
 select.1 = dis.price[dis.price>=50 & dis.price <= 100]
 select.1 # 94.0 75.2 56.4
 
+
+#which
 select.2 = dis.price[dis.price<50 | dis.price>100]
 select.2 # 169.2 150.4 131.6 112.8  37.6
