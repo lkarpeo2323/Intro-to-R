@@ -1,7 +1,7 @@
 #Exercise 9
 
-Student = c("Abby", "Bob", "Cindy","Debby","Ed")
-Score = c(78,86,94,85,76)
+grade = c("Abby" =78, "Bob" = 86, "Cindy"=94,"Debby"=85,"Ed"=76)
+grade["Bob"] #Get Bob's score
+grade = c(grade,Frank=80) # Add Frank's grade 
+grade
 
-data = data.frame(Student,Score)
-data
