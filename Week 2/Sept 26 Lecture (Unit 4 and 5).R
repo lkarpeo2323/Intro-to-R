@@ -12,6 +12,13 @@ sat.n = as.numeric(sat)
 sum(sat.n)/length(sat.n)
 
 
+#Exercise 1 (unit 5)
+a = c(1:10)
+b = matrix(1:30, ncol=2, byrow=T)
+income = cbind(a,b)
+colnames(income)=c("A","B","C")
+income
+
 
 
 
