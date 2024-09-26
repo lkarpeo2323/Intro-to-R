@@ -20,6 +20,17 @@ colnames(income)=c("A","B","C")
 income
 
 
+#Exercise 2
+
+income.2 <- income * 1000  # Multiply each element by 1000
+
+totals <- colSums(income.2)
+averages <- colMeans(income.2)
+
+totals
+averages
+
+
 
 
 
