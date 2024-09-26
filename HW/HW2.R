@@ -50,3 +50,11 @@ sorted[133] # 50.9
 mild = cancer[cancer >=50 & cancer <=70]
 mean(mild) # 35.88095
 
+
+#5E
+factor = rep(seq(.1,1,.1), length.out = length(cancer))
+factor
+
+#5F
+
+
