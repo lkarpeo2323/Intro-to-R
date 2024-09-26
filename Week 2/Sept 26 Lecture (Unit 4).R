@@ -5,3 +5,16 @@ grade["Bob"] #Get Bob's score
 grade = c(grade,Frank=80) # Add Frank's grade 
 grade
 
+
+#Exercise 11
+sat <- c(T,T,F,F,T,F,F,T,T,T,T)
+sat.n = as.numeric(sat)
+sum(sat.n)/length(sat.n)
+
+
+
+
+
+
+
+
