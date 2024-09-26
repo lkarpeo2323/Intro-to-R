@@ -56,5 +56,9 @@ factor = rep(seq(.1,1,.1), length.out = length(cancer))
 factor
 
 #5F
+cancer.2 = cancer *factor
+cancer.2 = sum(cancer.2)
+cancer.2 #3448.7
 
+#5G
 
