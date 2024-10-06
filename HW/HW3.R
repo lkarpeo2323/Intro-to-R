@@ -32,3 +32,7 @@ m.1[m.1>100]=100
 m.1/100
 m.1
 
+#3C: Combine gap2 and m.1 into a new matrix
+gap3 = cbind(gap2,m.1)
+gap3
+
