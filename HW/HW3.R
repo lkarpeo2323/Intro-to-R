@@ -6,7 +6,7 @@ gap = read.csv('gap.csv', header=TRUE)
 
 gap2= gap[2:4]
 
-#2B: structure of the data
+#2B: structure of gap2
 
 str(gap2) #173 obs. of  3 variables:
 
@@ -14,3 +14,6 @@ str(gap2) #173 obs. of  3 variables:
 
 gap2 = as.matrix(gap2)
 gap2
+
+#2D: Structure of gap2
+str(gap2)
