@@ -26,5 +26,9 @@ colnames(gap2) #"breastcancer"     "femaleemployrate" "employrate"
 
 m.1 = matrix(1:346,nrow=173,ncol = 2,byrow = TRUE)
 colnames(m.1)=c("Odd","Even")
+
+#3B
+m.1[m.1>100]=100
+m.1/100
 m.1
 
