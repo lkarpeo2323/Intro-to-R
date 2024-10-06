@@ -22,3 +22,9 @@ str(gap2)
 
 colnames(gap2) #"breastcancer"     "femaleemployrate" "employrate" 
 
+#3A: Create the Matrix
+
+m.1 = matrix(1:346,nrow=173,ncol = 2,byrow = TRUE)
+colnames(m.1)=c("Odd","Even")
+m.1
+
