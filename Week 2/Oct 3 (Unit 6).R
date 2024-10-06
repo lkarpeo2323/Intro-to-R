@@ -12,3 +12,11 @@ a
 #Approach 2
 dim(v) = c(2,3,2)
 v
+
+#Approach 3
+m.1 = matrix(1:6,nrow=2)
+m.1
+m.2 =matrix(7:12,nrow=2)
+m.2
+b = array(c(m.1,m.2),dim=c(2,3,2),dimnames=list(rn,cn,sn))
+b
