@@ -17,3 +17,7 @@ gap2
 
 #2D: Structure of gap2
 str(gap2)
+
+#2E: Variable Names
+names(gap2)
+
