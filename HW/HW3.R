@@ -38,11 +38,12 @@ gap3 = cbind(gap2,m.1)
 #4
 
 
-breastcancer2 <- as.numeric(gap3[, "breastcancer"]) * as.numeric(gap3[, "Odd"])
-
-# Add breastcancer2 to gap3
-gap3 <- cbind(gap3, breastcancer2)
+breastcancer2 = as.numeric(gap3[, "breastcancer"]) * as.numeric(gap3[, "Odd"])
+gap3 = cbind(gap3, breastcancer2)
 
 
-gap3
+#5: Averages and Totals
+
+totals = colSums(gap3, na.rm = TRUE)
+
 
