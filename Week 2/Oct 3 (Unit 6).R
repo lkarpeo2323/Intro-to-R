@@ -20,3 +20,28 @@ m.2 =matrix(7:12,nrow=2)
 m.2
 b = array(c(m.1,m.2),dim=c(2,3,2),dimnames=list(rn,cn,sn))
 b
+
+
+
+#Exercise 2
+
+b[1,2,2]
+class(b[1,2,2])
+
+b[1,,2]
+class(b[1,,2])
+
+b[1,,]
+class(b[1,,])
+
+b[1,c(1,3),1]
+class(b[1,c(1,3),1])
+
+b[,c(1,3),]
+class(b[,c(1,3),])
+
+b
+#Exercise 3
+
+
+
