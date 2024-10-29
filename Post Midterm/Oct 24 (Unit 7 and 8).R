@@ -22,9 +22,34 @@ list3[3][[1]][[3]][3]
 
 #Exercise 2
 list4 = list3
+list4[[2]][1,2]=50
 
+v = c(1:9)
+m= rbind(v)
 
+list4[[3]]=v
+list4[[3]]=m
+list4[[3]]= list(v,m)
 
 # Exercise 3
 list4[c(4, 5)] <- list(c("x", "y", "z"), matrix2 = matrix(10:19, nrow = 2))
 list4
+
+
+
+#Exercise 1
+
+name = c("Amy","Bob","Cindy","David","Eddie")
+grade = c(88,98,92,82,85)
+program = c(F,T,T,F,F)
+
+
+students = data.frame(name,grade,program)
+students
+
+#Exercise 2
+
+students[[2]][3]
+students[2][[1]][3]
+students$grade[3]
+students[3,2]
