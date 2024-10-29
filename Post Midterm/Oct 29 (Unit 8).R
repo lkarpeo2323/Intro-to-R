@@ -6,3 +6,4 @@ mydata <- data.frame(name, age, female, seniority)
 mydata
 
 mydata[["age"]][1] #Retrieve the first "Age" value
+mydata4 = mydata[mydata$female==T,] #Retrieve Data where "Female" is True
