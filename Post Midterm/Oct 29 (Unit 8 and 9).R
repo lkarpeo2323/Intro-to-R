@@ -4,7 +4,6 @@ name = c("Amy","Bob","Cindy","David","Eddie")
 grade = c(88,98,92,82,85)
 program = c(F,T,T,F,F)
 
-
 students = data.frame(name,grade,program)
 
 standing = c("senior","junior","junior","senior","senior")
@@ -13,7 +12,16 @@ commute = c(T,T,F,T,F)
 
 #cbind approach
 students = cbind(students,standing,credits,commute)
-students
 summary(students)
+
+# Dollar Sign approach
+students$standing = standing
+students$credits = credits
+students$commute = commute
+
+students
+
+
+
 
 
