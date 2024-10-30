@@ -22,6 +22,13 @@ nrow(sales1) #12 rows
 sales2 = 2*sales1
 sales2
 
+#1F
+
+mydata = cbind(sales1,sales2)
+
+#Add Row Names
+rownames(mydata) = c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+mydata
 
 
 
