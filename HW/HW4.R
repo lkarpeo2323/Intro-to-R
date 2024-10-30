@@ -34,3 +34,37 @@ names_list = list(
 #Create the array
 mydata = array(c(sales1,sales2), dim = c(12,3,2), dimnames= names_list)
 mydata
+
+
+
+#2A
+
+#Extract the November and December Data
+
+nov_dec_data <- mydata[c("Nov", "Dec"), , ]
+nov_dec_data
+
+#2B
+
+#Extract the Revenue Data
+
+revenue_data = mydata[ , "Revenue", ]
+revenue_data
+
+#2C
+
+#Extract the revenue data from November and December
+
+revenue_nov_dec = mydata[c("Nov","Dec"),"Revenue",]
+revenue_nov_dec
+
+
+#2D
+
+#Extract July revenue from branch 1
+revenue_july_branch1 = mydata["Jul","Revenue","Branch 1"]
+revenue_july_branch1 #13817
+
+
+
+
