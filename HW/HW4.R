@@ -132,6 +132,7 @@ members = list(ng= ng, age= age, fav.sport = fav.sport)
 members
 
 
+
 #5
 
 #Retrieve the value '27' from "age" in the list "members"
@@ -142,6 +143,14 @@ members$ng[3,1]
 
 #Retrieve the value 'tennis' from "fav.sport" from the list "members"
 members$fav.sport$Yoyo[2]
+
+
+#6
+
+#Add an element to the list
+
+members$seniority = c(3,5,4,10)
+members
 
 
 
