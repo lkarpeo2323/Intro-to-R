@@ -96,6 +96,40 @@ monthly_total_revenue
 
 #1
 
+age = c(26:29)
+age
+
+#2
+
+#Create a 4 by 2 matrix
+ng= matrix(c("Mickey","Minnie","Tong","Yoyo","F","M","M","F"), nrow=4, byrow=FALSE)
+
+#Name the columns
+colnames(ng) = c("Name","Gender")
+
+ng
+
+
+#3 
+
+#Create a list
+
+fav.sport = list(
+  Mickey = "soccer",
+  Minnie = c("volleyball", "golf"),
+  Tong = "basketball",
+  Yoyo = c("soccer","tennis","basketball")
+)
+
+fav.sport
+
+
+#4
+
+#Add all elements to the list
+members = list(ng,age,fav.sport)
+
+members
 
 
 
