@@ -82,6 +82,14 @@ total_branch2
 both_branches = rbind(total_branch1,total_branch2)
 colSums(both_branches)
 
+#3B
+
+#Total Revenue for EACH month from each Branch
+
+monthly_total_revenue = rowSums(mydata[ ,"Revenue" , ])
+monthly_total_revenue
+
+
 
 
 
