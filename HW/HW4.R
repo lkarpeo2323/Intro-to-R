@@ -24,15 +24,14 @@ sales2
 
 #1F
 
-mydata = cbind(sales1,sales2)
+mydata = list(
+  c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"), # row names
+  c("Unit", "Revenue", "Cost"), #Column names                                                         
+  c("Branch 1", "Branch 2") #Branch Names
+)
 
-#Add Row Names
-rownames(mydata) = c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+
+mydata = array(c(sales1,sales2), dim = c(12,3,2), dimnames= mydata)
 mydata
-
-
-
-
-
 
 
