@@ -4,8 +4,9 @@ sales = read.csv("sales.csv")
 #1b
 str(sales)
 
-#1c
+#1c:  
 
+#Convert "sales" to a matrix called "sales1"
 sales1 = as.matrix(sales)
 sales1
 
@@ -64,6 +65,24 @@ revenue_nov_dec
 #Extract July revenue from branch 1
 revenue_july_branch1 = mydata["Jul","Revenue","Branch 1"]
 revenue_july_branch1 #13817
+
+
+#3A
+
+# Total Unit, Revenue, and Cost for Branch 1
+
+total_branch1 = colSums(mydata[ , , "Branch 1"])
+total_branch1
+
+# Total Unit, Revenue, and Cost for Branch 2
+total_branch2 = colSums(mydata[ , , "Branch 2"])
+total_branch2
+
+#Both Branches colSums
+both_branches = rbind(total_branch1,total_branch2)
+colSums(both_branches)
+
+
 
 
 
