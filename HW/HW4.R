@@ -1,3 +1,5 @@
+#Problem Set 1
+
 #1a
 sales = read.csv("sales.csv")
 
@@ -88,6 +90,11 @@ colSums(both_branches)
 
 monthly_total_revenue = rowSums(mydata[ ,"Revenue" , ])
 monthly_total_revenue
+
+
+#Problem Set 2
+
+#1
 
 
 
