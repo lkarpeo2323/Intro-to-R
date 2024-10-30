@@ -24,14 +24,13 @@ sales2
 
 #1F
 
-mydata = list(
+#Create a List of all the variable Names (rows,columns, slices)
+names_list = list(
   c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"), # row names
   c("Unit", "Revenue", "Cost"), #Column names                                                         
   c("Branch 1", "Branch 2") #Branch Names
 )
 
-
-mydata = array(c(sales1,sales2), dim = c(12,3,2), dimnames= mydata)
+#Create the array
+mydata = array(c(sales1,sales2), dim = c(12,3,2), dimnames= names_list)
 mydata
-
-
