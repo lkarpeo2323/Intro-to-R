@@ -39,3 +39,15 @@ if (x<0){
 }
 
 x
+
+
+#Self- Defined Function for exercise 1
+
+abs = function(x){
+  if (x<0){
+    x = -x
+    x
+  }
+}
+
+abs(-100)
