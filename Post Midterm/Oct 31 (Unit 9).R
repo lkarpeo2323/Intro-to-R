@@ -21,6 +21,9 @@ is.factor(students$standing.f2)
 table(students$standing.f2)  
 
 
+#Exercise 2
 
-
-
+students$grade.f = cut(students$grade, breaks = c(0, 74, 89, 100))
+students$grade.f2 = cut(students$grade, breaks = c(0, 74, 89, 100), labels = c("Low", "Medium", "High"))
+students
+table(students$grade.f2)
