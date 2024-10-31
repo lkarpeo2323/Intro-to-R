@@ -27,3 +27,15 @@ students$grade.f = cut(students$grade, breaks = c(0, 74, 89, 100))
 students$grade.f2 = cut(students$grade, breaks = c(0, 74, 89, 100), labels = c("Low", "Medium", "High"))
 students
 table(students$grade.f2)
+
+
+
+
+#Exercise 1
+
+x= -10
+if (x<0){
+  x = -x
+}
+
+x
