@@ -42,3 +42,20 @@ if (x == 1) {
 }
 
 
+
+#Exercise 4
+
+x=3
+if(x%%1 !=0 | x< 1 | x>7){ #if x is not a an integer between 1 and 7
+  print("Enter a valid intger");
+} else { 
+  switch(x,"Mon", "Tue", "Wed",  "Thu",  "Fri",  "Sat",  "Sun")
+}
+
+
+
+
+
+
+
+
