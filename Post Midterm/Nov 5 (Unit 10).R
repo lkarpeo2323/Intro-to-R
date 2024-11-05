@@ -19,6 +19,8 @@ leo = function(x){
 leo(80) #run the function
 
 
+
+
 #Exercise 3 
 
 x=3
@@ -45,14 +47,20 @@ if (x == 1) {
 
 #Exercise 4
 
+
 x=3
+
 if(x%%1 !=0 | x< 1 | x>7){ #if x is not a an integer between 1 and 7
   print("Enter a valid intger");
 } else { 
   switch(x,"Mon", "Tue", "Wed",  "Thu",  "Fri",  "Sat",  "Sun")
 }
 
+#Exercise 5
 
+x = -10:10
+
+ifelse(x < 0, -1, ifelse(x == 0, 0, 1))
 
 
 
