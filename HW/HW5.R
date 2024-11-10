@@ -18,8 +18,20 @@ data$factor = factor(
 table(data$factor)
 
 
+data$loop1 <- as.character(data$femaleemployrate)
 
+#3B: Use a loop to set values of 'loop1' to "Low" or "High" or "N/A" based on 'femaleemployrate'
 
+for (i in 1:nrow(data)) {
+  if (is.na(data$femaleemployrate[i])) {
+    data$loop1[i] = "N/A"  # Assign "N/A" for NA values
+  } else if (data$femaleemployrate[i] <= 50) {
+    data$loop1[i] = "Low"  
+  } else {
+    data$loop1[i] = "High"  
+  }
+}
+data
 
 
 
