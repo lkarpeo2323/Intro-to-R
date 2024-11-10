@@ -1,4 +1,8 @@
 #1A
 
-data = readcsv("gap.csv")
-data
+data = read.csv("gap.csv")
+
+
+#1B
+names(data)
+summary(data)
