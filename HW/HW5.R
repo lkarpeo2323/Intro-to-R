@@ -17,7 +17,7 @@ data$factor = factor(
 # 2C: Put the frequency counts of "Low" and "High" in the "factor" variable
 table(data$factor)
 
-
+#3A
 data$loop1 <- as.character(data$femaleemployrate)
 
 #3B: Use a loop to set values of 'loop1' to "Low" or "High" or "N/A" based on 'femaleemployrate'
