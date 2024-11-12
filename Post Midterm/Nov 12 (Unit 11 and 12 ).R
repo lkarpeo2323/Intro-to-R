@@ -13,7 +13,7 @@ i = 1
 while (i <= ncol(students)){
   print(paste(
     names(students)[i], 
-              "is", 
+    "is", 
     class(students[[i]])))
   i = i+1 #Must have increment AFTER the print
 }
@@ -38,11 +38,8 @@ repeat {
   }
 }
 
+#Exercise 1 (Unit 12)
 
-
-#Exercise 1
-
-# Define the varclass function
 varclass <- function(df) {
   for (col in names(df)) {
     print(paste(col, "is", class(df[[col]])))
