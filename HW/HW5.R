@@ -38,11 +38,11 @@ data
 
 
 
-#3C: Use an 'ifelse' statement to caret new column
+#3C: Use an 'ifelse' statement to create new column
 
 ifelse_statement = ifelse(is.na(data$femaleemployrate), 
-                    "N/A", 
-                    ifelse(data$femaleemployrate<=50,"Low","High"))
+                          "N/A", 
+                          ifelse(data$femaleemployrate<=50,"Low","High"))
 
 
 
