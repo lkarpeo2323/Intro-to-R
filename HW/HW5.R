@@ -40,12 +40,16 @@ data
 
 #3C: Use an 'ifelse' statement to caret new column
 
-data$part_3c = ifelse(is.na(data$femaleemployrate), 
+ifelse_statement = ifelse(is.na(data$femaleemployrate), 
                     "N/A", 
                     ifelse(data$femaleemployrate<=50,"Low","High"))
 
-data
 
+
+#4
+data$loop2 = ifelse_statement
+
+data
 
 
 
