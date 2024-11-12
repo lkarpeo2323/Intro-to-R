@@ -26,7 +26,7 @@ data$loop1 <- as.character(data$femaleemployrate)
 
 for (i in 1:nrow(data)) {
   if (is.na(data$femaleemployrate[i])) {
-    data$loop1[i] = "N/A"  # Assign "N/A" for NA values
+    data$loop1[i] = NA  # Assign "N/A" for NA values
   } else if (data$femaleemployrate[i] <= 50) {
     data$loop1[i] = "Low"  
   } else {
@@ -38,16 +38,15 @@ data
 
 
 
-#3C: Use an 'ifelse' statement to create new column
-
-ifelse_statement = ifelse(is.na(data$femaleemployrate), 
-                          "N/A", 
-                          ifelse(data$femaleemployrate<=50,"Low","High"))
+#3C ?
 
 
+#4 Use an 'ifelse' statement to create new column called 'loop2'
+  
+data$loop2 = ifelse(is.na(data$femaleemployrate), 
+                    NA, 
+                    ifelse(data$femaleemployrate<=50,"Low","High"))
 
-#4
-data$loop2 = ifelse_statement
 
 data
 
