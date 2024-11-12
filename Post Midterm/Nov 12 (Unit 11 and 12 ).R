@@ -3,7 +3,6 @@ grade <- c(88,98,92,82,85)
 program <- c(F,T,T,F,F)
 students <- data.frame(name,grade,program)
 
-
 names(students)[1] #Retrieve the name of the first column
 class(students[[1]]) #Retrieve the class of a column
 
@@ -25,9 +24,6 @@ while (i <= ncol(students)){
 
 i = 1
 repeat {
-  if (i > ncol(students)) {
-    break  
-  }
   
   print(paste(
     names(students)[i], 
@@ -36,4 +32,8 @@ repeat {
   ))
   
   i <- i + 1
+  
+  if (i > ncol(students)) {
+    break  
+  }
 }
