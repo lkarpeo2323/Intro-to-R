@@ -22,18 +22,32 @@ while (i <= ncol(students)){
 
 #Exercise 3: 'Repeat' Method
 
-i = 1
+x = 1
 repeat {
   
   print(paste(
-    names(students)[i], 
+    names(students)[x], 
     "is", 
-    class(students[[i]])
+    class(students[[x]])
   ))
   
-  i <- i + 1
+  x <- x + 1
   
-  if (i > ncol(students)) {
+  if (x > ncol(students)) {
     break  
   }
 }
+
+
+
+#Exercise 1
+
+# Define the varclass function
+varclass <- function(df) {
+  for (col in names(df)) {
+    print(paste(col, "is", class(df[[col]])))
+  }
+}
+
+varclass(mtcars)
+
