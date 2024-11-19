@@ -30,7 +30,7 @@ barplot(grade~name,data=students,xlab="Student Name",ylab="Grades")
 #-------------------------------------------------------------
 #Histogram
 
-hist(mtcars$mpg, breaks=10)
+hist(mtcars$mpg, breaks=10) #10 blocks
 #------------------------
 #Scatter Plot
 
