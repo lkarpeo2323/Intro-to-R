@@ -1,14 +1,20 @@
 #Test the effect of Gender on Internet use
-
-
 data = read.csv("Telemedicine_extract.csv")
-
-
 names(data)
 
+#######  Run The Test ################
 chisq.test(data$Gender, data$InternetUse)
+#####################################################
 
+###########  TEST SUMMARY #############
 #p-value =  0.8996
 #we cannot reject null hypothesis: 
 #we do not have evidence that internet use is effected by gender
-#Best to use a bar plot
+##################################################################
+
+
+##############  Produce a bar Plot    #################3
+a = table(data$Gender, data$InternetUse)
+barplot(a, beside=T, legend=T)
+########################################################
+
