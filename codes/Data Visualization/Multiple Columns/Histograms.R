@@ -3,7 +3,7 @@ var
 
 #Send to PDF
 
-pdf("ScatterPlots.pdf")
+pdf("Histograms.pdf")
 
 
 par(mfrow = c(3,2))
