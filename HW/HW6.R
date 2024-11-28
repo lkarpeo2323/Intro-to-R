@@ -50,3 +50,28 @@ for (i in 1:7) {
 }
 
 dev.off()
+
+#--------------------------------
+
+#4
+
+
+var = names(mtcars)
+full_names = c("Miles Per Gallon", "Cylinders",  "Displacement", "Horse Power", "Rear Axle Ratio", "Weight", "Quarter Mile Time")
+
+
+
+par(mfrow = c(3, 2))
+
+boxplot(mtcars$mpg ~ mtcars[[var[2]]], 
+        main = paste("Boxplot of mpg by", full_names[2]),  
+        xlab = var[2],                  
+        ylab = "Miles Per Gallon")       
+
+for (i in 8:11) {
+  boxplot(mtcars$mpg ~ mtcars[[var[i]]], 
+          main = paste("Boxplot of mpg by", var[i]),  
+          xlab = var[i],                  
+          ylab = "Miles Per Gallon",      
+          )              
+}
