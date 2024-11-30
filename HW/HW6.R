@@ -86,7 +86,48 @@ for (i in 10:11) {
   )              
 }
 
+
 def.off()
 
 
+#--------------------------
 
+
+#5
+
+
+var = names(mtcars)
+full_names = c("Miles Per Gallon", "cylinders",  "Displacement", "Horse Power", "Rear Axle Ratio", "Weight", "Quarter Mile Time", 
+               "V/S", "0 = automatic, 1 = manual", "forward gears", "carburetors")
+
+pdf("Boxplots for ALL.pdf")
+
+
+par(mfrow = c(3, 2))
+
+for (x in 3:7){
+  boxplot(mtcars[[var[x]]] ~ mtcars[[var[2]]], 
+          main = paste("Boxplot of", var[x] ,"by", var[2]),  
+          xlab = paste("Number of", full_names[2]),                  
+          ylab = full_names[x]) 
+  
+  for (i in 8:9) {
+  boxplot(mtcars[[var[x]]] ~ mtcars[[var[i]]], 
+          main = paste("Boxplot of", var[x] ,"by", var[i]),  
+          xlab = full_names[i],                  
+          ylab = full_names[x]     
+    )              
+  }
+  
+  for (i in 10:11) {
+  boxplot(mtcars[[var[x]]] ~ mtcars[[var[i]]], 
+          main = paste("Boxplot of", var[x] ,"by", var[i]),  
+          xlab = paste("Number of", full_names[i]),                  
+          ylab = full_names[x]      
+    )              
+  }
+  
+  
+  
+}
+dev.off()
