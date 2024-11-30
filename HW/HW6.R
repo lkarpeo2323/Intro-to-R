@@ -28,13 +28,13 @@ var
 
 #List the full Names
 
-full_names = c("Miles Per Gallon", "Cylinders", "Displacement", "Horse Power", "Rear Axle Ratio", "Weight", "Quarter Mile Time")
+full_names = c("Miles Per Gallon", "Cylinders",  "Displacement", "Horse Power", "Rear Axle Ratio", "Weight", "Quarter Mile Time")
 
 #Send to PDF
 
 pdf("Histograms.pdf")
 
-# 3 rows by 2 columns
+
 par(mfrow = c(3,2))
 
 for (i in 1:7) {
@@ -42,36 +42,49 @@ for (i in 1:7) {
     i=i+1
   } else{
   hist(mtcars[[var[i]]], 
-       main = paste("Histogram of", var[i]), #Title
-       xlab = full_names[i], #x label 
-       ylab = "Frequency", #y label
+       main = paste("Histogram of", var[i]), 
+       xlab = full_names[i], 
+       ylab = "Frequency", 
        )
   }
 }
 
 dev.off()
 
-#--------------------------------
 
+#------------------------------------------------------------
 #4
 
 
 var = names(mtcars)
-full_names = c("Miles Per Gallon", "Cylinders",  "Displacement", "Horse Power", "Rear Axle Ratio", "Weight", "Quarter Mile Time")
+full_names = c("Miles Per Gallon", "cylinders",  "Displacement", "Horse Power", "Rear Axle Ratio", "Weight", "Quarter Mile Time", 
+               "V/S", "0 = automatic, 1 = manual", "forward gears", "carburetors")
 
+pdf("Boxplots for MPG.pdf")
 
 
 par(mfrow = c(3, 2))
 
 boxplot(mtcars$mpg ~ mtcars[[var[2]]], 
-        main = paste("Boxplot of mpg by", full_names[2]),  
-        xlab = var[2],                  
+        main = paste("Boxplot of mpg by", var[2]),  
+        xlab = paste("Number of", full_names[2]),                  
         ylab = "Miles Per Gallon")       
 
-for (i in 8:11) {
+for (i in 8:9) {
   boxplot(mtcars$mpg ~ mtcars[[var[i]]], 
           main = paste("Boxplot of mpg by", var[i]),  
-          xlab = var[i],                  
+          xlab = full_names[i],                  
           ylab = "Miles Per Gallon",      
           )              
 }
+
+for (i in 10:11) {
+  boxplot(mtcars$mpg ~ mtcars[[var[i]]], 
+          main = paste("Boxplot of mpg by", var[i]),  
+          xlab = paste("Number of", full_names[i]),                  
+          ylab = "Miles Per Gallon",      
+  )              
+}
+
+
+
