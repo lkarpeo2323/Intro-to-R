@@ -95,8 +95,8 @@ def.off()
 
 #5
 
-
 var = names(mtcars)
+
 full_names = c("Miles Per Gallon", "cylinders",  "Displacement", "Horse Power", "Rear Axle Ratio", "Weight", "Quarter Mile Time", 
                "V/S", "0 = automatic, 1 = manual", "forward gears", "carburetors")
 
@@ -105,7 +105,10 @@ pdf("Boxplots for ALL.pdf")
 
 
 
-for (x in 3:7){
+for (x in 1:7){
+  if (x==2){
+    next
+  } else{
   par(mfrow = c(3, 2))
   boxplot(mtcars[[var[x]]] ~ mtcars[[var[2]]], 
           main = paste("Boxplot of", var[x] ,"by", var[2]),  
@@ -127,7 +130,7 @@ for (x in 3:7){
             ylab = full_names[x]      
     )              
   }
-  
+  }
   
 }
 
