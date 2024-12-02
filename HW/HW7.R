@@ -1,10 +1,17 @@
 #1 
+
 visit = read.csv("Telemedicine_extract.csv")
-#2--------------------------------------------
+
+#2
 
 #a
 
+library(psych)
+
+describeBy(visit$WaitMinutes, visit$Gender)
+
 #------------------------------
+
 #b
 
 t.test(visit$WaitMinutes~visit$Gender, data=visit)
@@ -14,6 +21,7 @@ t.test(visit$WaitMinutes~visit$Gender, data=visit)
 
 #---------------------------------
 #c
+
 summary(lm(visit$WaitMinutes~visit$Gender,data=visit))
 
 #p-value: 0.5617
@@ -21,6 +29,7 @@ summary(lm(visit$WaitMinutes~visit$Gender,data=visit))
 
 #------------------
 #d
+
 boxplot(visit$WaitMinutes~visit$Gender, data=visit, 
         main = "Boxplot of Wait Time by Gender",
         xlab="Gender", 
