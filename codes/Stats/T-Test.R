@@ -1,11 +1,10 @@
-#Figure Out if weights are different
+visit = read.csv("Telemedicine_extract.csv")
 
-college = read.csv("t-Test.csv")
+t.test(visit$WaitMinutes~visit$Gender, data=visit)
 
-t.test(college$Weight~college$University, data=college)
+boxplot(visit$WaitMinutes~visit$Gender, data=visit, 
+        main = "Boxplot of Wait Minutes by Gender",
+        xlab="Gender", 
+        ylab="Wait Minutes")
 
-
-
-
-boxplot(college$Weight~college$University, data=college)
-        
+dev.off()        
