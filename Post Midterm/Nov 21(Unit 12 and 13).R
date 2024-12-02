@@ -1,4 +1,5 @@
-#Exercise 6
+
+#Unit 12 Exercise 6
 
 data(mtcars)
 
@@ -16,11 +17,37 @@ for (i in 3:7){
 
 dev.off()
 
-#---------------------------------------------------
+#---------------Unit 13------------------------------------
+
+#Exercise 1-------
+
+
+data(mtcars)
+
+
+mtcars$am.f <- factor(mtcars$am,labels=c("Auto","Manual"))
+mtcars$vs.f <- factor(mtcars$vs,labels=c("V-Shape","Straight"))
+mtcars$cyl.f <- factor(mtcars$cyl,labels=c("4 Cylinders","6 Cylinders","8 Cylinders"))
+
+t.test(mpg~vs.f, data=mtcars)
+
+
+#Box Plot for T-Test
+boxplot(mpg ~ vs.f, data = mtcars, 
+        main = "MPG by Engine Type (V-Shape vs Straight)",
+        xlab = "Engine Type", 
+        ylab = "Miles Per Gallon")
+
+dev.off()
+
+#The p-value is less than .05 indicating a significant difference between the avg mpg for v-shape and straight
+
+#Exercise 2-----
 
 
 
-# Unit 13 Exercise 3
+
+#Exercise 3------
 
 #Test the effect of Gender on Internet use
 data = read.csv("Telemedicine_extract.csv")
