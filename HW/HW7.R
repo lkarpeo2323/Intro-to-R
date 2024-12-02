@@ -70,6 +70,21 @@ dev.off()
 
 #4
 
+#A
+
+summary(lm(WaitMinutes ~ Age + Gender, data = visit))
+
+#For Females (Gender=0): WaitMinutes= 46.2617− 0.5303 × Age
+#For Males (Gender= 1): WaitMinutes = 46.2617− 0.5303 × Age−4.9867
+
+#The coefficient of -0.5303 for age suggests that for every year of age, waiting time decreases by .5303 minutes. This is somewhat significant with a p-value of 0.050362
+# Gender does not show statistical significance as its p-value  is 0.335877 
+
+
+
+
+
+
 
 
 
