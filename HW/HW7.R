@@ -61,6 +61,15 @@ fit = lm(visit$WaitMinutes~visit$Age, data=visit)
 abline(fit,lty=5) # Plot the best fit line
 
 
+#The scatter plot visually represents the regression model in 3a, showing the relationship between wait minutes and age
+
+
 dev.off()
+
+
+
+#4
+
+
 
 
