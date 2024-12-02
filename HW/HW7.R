@@ -8,6 +8,7 @@ visit = read.csv("Telemedicine_extract.csv")
 
 library(psych)
 
+
 describeBy(visit$WaitMinutes, visit$Gender)
 
 #------------------------------
@@ -37,5 +38,29 @@ boxplot(visit$WaitMinutes~visit$Gender, data=visit,
 
 dev.off()
 
+
+
+#3------------------------
+
+
+#a
+
+summary(lm(visit$WaitMinutes~visit$Age,data=visit))
+
+#In this case, age is not statistically significant as the p-value is .06918.
+# We cannot conclude that waiting time differs based on age
+
+
+#b
+
+plot(visit$Age, visit$WaitMinutes, 
+     main = "Wait Minutes vs Age", 
+     xlab = "Age",
+     ylab= "Wait Time (Minutes)") 
+fit = lm(visit$WaitMinutes~visit$Age, data=visit) 
+abline(fit,lty=5) # Plot the best fit line
+
+
+dev.off()
 
 
