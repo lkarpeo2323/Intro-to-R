@@ -1,5 +1,5 @@
 data = read.csv("US  E-commerce records 2020_YC.csv")
-
+library(psych)
 
 #Find the effect of covid on sales. 
 
@@ -9,3 +9,6 @@ data = read.csv("US  E-commerce records 2020_YC.csv")
 chisq.test(data$State, data$Category)
 
 data
+
+
+#Use describeBy for the sales by region, and state
