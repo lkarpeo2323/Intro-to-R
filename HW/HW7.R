@@ -68,20 +68,39 @@ dev.off()
 
 
 
-#4
+#4--------------
 
-#A
+#A----------
 
-summary(lm(WaitMinutes ~ Age + Gender, data = visit))
-
-#For Females (Gender=0): WaitMinutes= 46.2617− 0.5303 × Age
-#For Males (Gender= 1): WaitMinutes = 46.2617− 0.5303 × Age−4.9867
+x = summary(lm(WaitMinutes ~ Age + Gender, data = visit))
+x
+#For Females (Gender=0): WaitMinutes= 46.2617 + (-0.5303 × Age)
+#For Males (Gender= 1): WaitMinutes= 46.2617 + (-0.5303 × Age) − 4.9867
 
 #The coefficient of -0.5303 for age suggests that for every year of age, waiting time decreases by .5303 minutes. This is somewhat significant with a p-value of 0.050362
 # Gender does not show statistical significance as its p-value  is 0.335877 
 
 
+#B--------
 
+
+plot(visit$Age, visit$WaitMinutes, 
+     main = "Wait Minutes vs Age by Gender", 
+     xlab = "Age",
+     ylab= "Wait Time (Minutes)") 
+x = summary(lm(WaitMinutes ~ Age + Gender, data = visit))
+
+
+# for female (Gender = 0)
+abline(a=x$coefficients[1, 1],b=x$coefficients[2, 1],col="red")
+
+# for male (Gender = 1)
+abline(a=x$coefficients[1, 1]+x$coefficients[3, 1],b=x$coefficients[2, 1],col="blue")
+
+legend("topright",legend=c("Female","Male"),pch=15,col=c("red","blue"))
+
+
+dev.off()
 
 
 
