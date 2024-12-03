@@ -1,14 +1,21 @@
 data = read.csv("US  E-commerce records 2020_YC.csv")
 library(psych)
 
-#Find the effect of covid on sales. 
+#Regression Test #1
 
-#Differnce is avg sales per day before and after 3/15/2020
-
-#Run PAIRED T-Test
-chisq.test(data$State, data$Category)
-
-data
+summary(lm(Sales ~ factor(data$Sub.Category), data = data))
 
 
-#Use describeBy for the sales by region, and state
+boxplot(data$Sales ~ factor(data$Sub.Category),
+        main = "Sales by Sub.Category",
+        xlab = "Sub.Category",
+        ylab = "Sales", 
+        las=2)
+
+
+
+dev.off()
+
+
+
+
