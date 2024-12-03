@@ -3,6 +3,7 @@ library(psych)
 
 #Regression Test #1
 
+
 summary(lm(Sales ~ factor(data$Sub.Category), data = data))
 
 
