@@ -53,6 +53,11 @@ boxplot(data$Quantity~factor(data$Sub.Category),
 
 
 
+#---------------------------
+
+
+#Plot quantity vs profit see the slope of the best fit line
+
 
 
 
