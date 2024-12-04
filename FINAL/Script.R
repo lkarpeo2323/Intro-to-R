@@ -1,8 +1,7 @@
 data = read.csv("US  E-commerce records 2020_YC.csv")
 library(psych)
 
-#---------------------------Regression Test #1---------------------------------------------------
-
+#########################3-----Regression Test #1----###################################3
 #Copiers produced the most sales
 
 summary(lm(Sales ~ factor(data$Sub.Category), data = data))
@@ -15,8 +14,7 @@ boxplot(data$Sales ~ factor(data$Sub.Category),
         las=2)
 dev.off()
 
-#-----------------------------Stat Tests----------------------------------------------------------
-
+#######################3---------Stat Tests-----------#################################
 #Profit vs SubCategory
 
 #Statistical Test 1: ANOVA
