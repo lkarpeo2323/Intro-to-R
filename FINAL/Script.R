@@ -76,20 +76,7 @@ dev.off()
 
 
 
-############### Cities With Most Orders #######################
-
-factor(data$Order.ID)
-cities = aggregate(data$Order.ID ~ City, data = data, length)
-colnames(cities) = c("City", "Number of Orders")
-
-most = cities[cities$`Number of Orders`>25, ]
-
-barplot(`Number of Orders`~City,data=most,
-        xlab="City Name",
-        ylab="Total Orders", 
-        las=2)
 
 
-dev.off()
 
 
