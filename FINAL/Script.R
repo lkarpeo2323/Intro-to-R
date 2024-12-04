@@ -1,7 +1,7 @@
 data = read.csv("US  E-commerce records 2020_YC.csv")
 library(psych)
 
-#Regression Test #1
+#---------------------------Regression Test #1---------------------------------------------------
 
 #Copiers produced the most sales
 
@@ -16,15 +16,12 @@ boxplot(data$Sales ~ factor(data$Sub.Category),
 dev.off()
 
 #-----------------------------Stat Tests----------------------------------------------------------
+
 #Profit vs SubCategory
 
 #Statistical Test 1: ANOVA
 
 #Conclusion: Copiers Produced the most profit:
-
-#Question: is it partly because the quantity sold was high?
-        #Check the next boxplot ( Quantity vs subCategory)
-
 
 #------Test 1
 summary(aov(Profit ~ Sub.Category, data = data))
@@ -38,7 +35,7 @@ boxplot(data$Profit~factor(data$Sub.Category),
      ylim= c(-100,6000)
 )
 #-----------------------------------------------------------------------------------------
-#---  Test 2
+#---  Test 2-----------
 
 summary(aov(Quantity ~ Sub.Category, data = data))
 
@@ -52,11 +49,35 @@ boxplot(data$Quantity~factor(data$Sub.Category),
     )
 
 
+##########################--------CHARTS-----------##########################
 
-#---------------------------
+
+profit = aggregate(Profit ~ Sub.Category, data = data, sum)
+
+#------------Gains--------------#
+positive = profit[profit$Profit > 0, ]
+
+pie(positive$Profit, 
+    labels=paste(positive$Sub.Category, ":", round(positive$Profit,digits= 2))
+)
+
+dev.off()
 
 
-#Plot quantity vs profit see the slope of the best fit line
+#-----------Losses---------#
+
+negative = profit[profit$Profit < 0, ]
+
+negative$Profit= negative$Profit*-1
+
+pie(negative$Profit, 
+    labels=paste(negative$Sub.Category, ":", round(negative$Profit,digits= 2))
+    )
+
+dev.off()
+
+
+
 
 
 
