@@ -17,6 +17,24 @@ boxplot(data$Sales ~ factor(data$Sub.Category),
 
 dev.off()
 
+#------------------------------------------------------------------
+#Regression Test #2
+
+#Profit vs Quantity
+
+
+summary(lm(Profit ~ Quantity, data = data))
+
+plot(data$Quantity, data$Profit,
+     main = "Profit vs Quantity",
+     xlab = "Quantity",
+     ylab = "Profit",
+     col = "blue", pch = 16)
+abline(lm(Sales ~ Quantity, data = data), col = "red", lwd = 2)
+
+
+dev.off()
+
 
 
 
