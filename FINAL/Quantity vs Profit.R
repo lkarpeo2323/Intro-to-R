@@ -39,7 +39,6 @@ gain = data[data$Sub.Category=='Copiers'|
 
 
 
-mean(gain$Quantity)
+t.test(gain$Quantity, loss$Quantity)
 
-
-#Run a t-test comparing the means of gain$Quantity and loss$Quantity
+#Not enough evidence to suggest that quantity sold affects the profit
