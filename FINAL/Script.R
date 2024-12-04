@@ -34,3 +34,10 @@ plot(data$Quantity, data$Profit,
 abline(lm(Profit ~ Quantity, data = data), col = "red", lwd = 2)
 
 
+#Profit vs SubCategory
+
+
+
+
+
+
