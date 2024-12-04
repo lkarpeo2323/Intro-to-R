@@ -42,5 +42,4 @@ gain = data[data$Sub.Category=='Copiers'|
 mean(gain$Quantity)
 
 
-
-#Run a t test comparing the means of gain$Quantity and loss$Quantity
+#Run a t-test comparing the means of gain$Quantity and loss$Quantity
