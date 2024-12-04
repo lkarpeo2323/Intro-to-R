@@ -17,7 +17,7 @@ boxplot(loss$Quantity~factor(loss$Sub.Category),
 )
 
 
-List the Mean of the Quantity of positive Profit and negative Profit
+#List the Mean of the Quantity of positive Profit and negative Profit
 
 
 
@@ -33,10 +33,14 @@ gain = data[data$Sub.Category=='Copiers'|
               data$Sub.Category=='Art'|
               data$Sub.Category=='Labels'|
               data$Sub.Category=='Envelopes'|
-              data$Sub.Category=='Fasteners'
+              data$Sub.Category=='Fasteners', 
             
 ]
 
 
 
-mean(gain$Sub.Category)
+mean(gain$Quantity)
+
+
+
+#Run a t test comparing the means of gain$Quantity and loss$Quantity
