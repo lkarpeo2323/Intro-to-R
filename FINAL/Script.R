@@ -25,15 +25,15 @@ dev.off()
 
 summary(lm(Profit ~ Quantity, data = data))
 
+
+
 plot(data$Quantity, data$Profit,
      main = "Profit vs Quantity",
      xlab = "Quantity",
      ylab = "Profit",
-     col = "blue", pch = 16)
+     col = "blue", pch = 16, 
+     ylim= c(0,1000))
 abline(lm(Sales ~ Quantity, data = data), col = "red", lwd = 2)
-
-
-dev.off()
 
 
 
