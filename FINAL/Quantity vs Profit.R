@@ -15,3 +15,6 @@ boxplot(loss$Quantity~factor(loss$Sub.Category),
         ylab = "Quantity", 
         las=2,
 )
+
+
+List the Mean of the Quantity of positive Profit and negative Profit
