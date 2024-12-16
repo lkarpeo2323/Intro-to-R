@@ -1,9 +1,10 @@
 #Load Data
-data <- read.csv("projectdata.csv", header = TRUE)
+data <- read.csv("US  E-commerce records 2020_YC.csv", header = TRUE)
 
 #Load Required Libraries
 library(psych)
-library(ggplot2)
+install.packages(nnet)
+library(nnet)
 
 # --------------------------------------------------------------------------------
 # Question 1: Analyze Sales by Category and Region
@@ -111,5 +112,146 @@ plot(data$Discount, data$Profit,
 # Add regression line to the scatter plot
 fit = lm(Profit~Discount, data=data) 
 abline(fit,lty=2, lwd=2) 
+
+dev.off()
+
+###############################################################################
+
+#-------------------------------------------------
+# Advanced Analysis
+#-------------------------------------------------
+
+
+#regression analysis of ship mode by segment 
+model1 = multinom(data$Ship.Mode~data$Segment, data = data)
+
+summary(model1)
+
+#stored the coefficients of the summary for model1 in variable named coefficients
+coefficients = summary(model1)$coefficients
+coefficients
+
+##stored the standard errors of the summary for model1 in variable named standarderrors
+standarderrors = summary(model1)$standard.errors 
+standarderrors
+
+#calculated the z-values for model1
+z_scores = coefficients / standarderrors
+
+#used the z-values to calculate the p-values for the multinomial regression in model1
+p_values <- 2 * (1 - pnorm(abs(z_scores)))
+p_values
+
+
+#regression analysis of ship mode by region  
+model2 = multinom(data$Ship.Mode~data$Region, data = data)
+summary(model2)
+
+#stored the coefficients of the summary for model2 in variable named coefficients2
+coefficients2 = summary(model2)$coefficients
+coefficients2
+
+#stored the standarderrors of the summary for model2 in variable named standarderrors2
+standarderrors2 = summary(model2)$standard.errors 
+standarderrors2
+
+#calculated the z-values for model2
+z_scores2 = coefficients2 / standarderrors2
+
+#used the z-values to calcualte the p-values for model2
+p_values2 <- 2 * (1 - pnorm(abs(z_scores2)))
+p_values2
+
+#conducted a chi sq test to verify the regerssion results for model2
+model3table = table(data$Ship.Mode,factor(data$Region))
+model3table
+#displays the p-value for the chisq test of ship mode and region
+chisq.test(model3table)
+
+
+#barplot visualizes the usage frequency of ship mode by region
+mycolors = c('red','blue','pink','green')
+
+barplot(model3table,beside = TRUE,
+        xlab = "Region",
+        ylab = "Usage Frequency",
+        col = mycolors)
+legend("topleft",legend =c("First Class","Same Day","Second Class","Standard Class") ,cex = .65,fill =mycolors )
+
+
+
+
+
+
+
+######---Create Visualization PDF--------###########
+
+
+pdf("EcommercePlots.pdf")
+par(mfrow = c(3,2))
+
+#-----Total Sales by Product Category
+plot_one = aggregate(Sales~Category, data = data, sum)
+
+barplot(
+  plot_one$Sales, 
+  names.arg = plot_one$Category, 
+  col = "blue", 
+  xlab = "Category", 
+  ylab = "Sales", 
+  main = "Sales by Product Category", 
+)
+
+
+
+#---Total Sales by Region
+plot_two = aggregate(Sales~Region, data = data, sum)
+
+barplot(
+  plot_two$Sales, 
+  names.arg = plot_two$Region, 
+  col = "green", 
+  xlab = "Category", 
+  ylab = "Sales", 
+  main = "Sales by Region", 
+  
+)
+
+
+
+#---- Barplot for Average Profit by Region
+
+barplot(mean_profit$Profit,
+        names.arg = mean_profit$Region,
+        main = "Average Profit by Region",
+        xlab = "Region",
+        ylab = "Average Profit",
+        col = "lightblue",
+        ylim = c(0, max(mean_profit$Profit) + 50))
+
+
+#----Scatter Plot of Profit vs Discount ---
+  
+  plot(data$Discount, data$Profit, 
+       data=data,
+       xlab="Discount", 
+       ylab="Profit", 
+       main = "Profit vs Discount", 
+       cex=0.8, 
+       pch=16) 
+
+# Add regression line to the scatter plot
+fit = lm(Profit~Discount, data=data) 
+abline(fit,lty=2, lwd=2) 
+
+
+#---barplot visualizes the usage frequency of ship mode by region
+mycolors = c('red','blue','pink','green')
+
+barplot(model3table,beside = TRUE,
+        xlab = "Region",
+        ylab = "Usage Frequency",
+        col = mycolors)
+legend("topleft",legend =c("First Class","Same Day","Second Class","Standard Class") ,cex = .65,fill =mycolors )
 
 dev.off()
