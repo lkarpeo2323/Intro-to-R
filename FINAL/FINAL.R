@@ -82,9 +82,7 @@ barplot(mean_profit$Profit,
         main = "Average Profit by Region",
         xlab = "Region",
         ylab = "Average Profit",
-        col = "lightblue",
-        ylim = c(0, max(mean_profit$Profit) + 50))
-
+        col = "blue")
 # --------------------------------------------------------------------------------
 # Question 4: Analyzing the Relationship Between Profit and Discount
 # --------------------------------------------------------------------------------
@@ -188,7 +186,7 @@ legend("topleft",legend =c("First Class","Same Day","Second Class","Standard Cla
 
 
 pdf("EcommercePlots.pdf")
-par(mfrow = c(3,2))
+par(mfrow = c(2,2))
 
 #-----Total Sales by Product Category
 plot_one = aggregate(Sales~Category, data = data, sum)
@@ -200,9 +198,9 @@ barplot(
   xlab = "Category", 
   ylab = "Sales", 
   main = "Sales by Product Category", 
+  cex.axis=.8
 )
-
-
+dev.off()
 
 #---Total Sales by Region
 plot_two = aggregate(Sales~Region, data = data, sum)
@@ -219,30 +217,6 @@ barplot(
 
 
 
-#---- Barplot for Average Profit by Region
-
-barplot(mean_profit$Profit,
-        names.arg = mean_profit$Region,
-        main = "Average Profit by Region",
-        xlab = "Region",
-        ylab = "Average Profit",
-        col = "lightblue",
-        ylim = c(0, max(mean_profit$Profit) + 50))
-
-
-#----Scatter Plot of Profit vs Discount ---
-  
-  plot(data$Discount, data$Profit, 
-       data=data,
-       xlab="Discount", 
-       ylab="Profit", 
-       main = "Profit vs Discount", 
-       cex=0.8, 
-       pch=16) 
-
-# Add regression line to the scatter plot
-fit = lm(Profit~Discount, data=data) 
-abline(fit,lty=2, lwd=2) 
 
 
 #---barplot visualizes the usage frequency of ship mode by region
@@ -253,5 +227,48 @@ barplot(model3table,beside = TRUE,
         ylab = "Usage Frequency",
         col = mycolors)
 legend("topleft",legend =c("First Class","Same Day","Second Class","Standard Class") ,cex = .65,fill =mycolors )
+
+dev.off()
+
+
+
+#-------------------------------##############
+#Data Analysis Visualization PDF
+#-------------------------------------##########
+
+pdf("AnalysisPlots.pdf")
+par(mfrow = c(2,2))
+
+
+# ----------------------------------------------------
+# Scatter Plot: Profit vs Discount with Regression Line
+# ----------------------------------------------------
+
+# Scatter plot to visualize the relationship between Discount and Profit
+plot(data$Discount, data$Profit, 
+     xlab = "Discount (%)", 
+     ylab = "Profit (USD)", 
+     main = "Scatter Plot: Profit vs Discount", 
+     pch = 16, col = "blue", 
+     cex = 0.8)  # Adjust point size for clarity
+
+profit_discount_model <- lm(Profit ~ Discount, data = data)
+
+abline(profit_discount_model, col = "red", lwd = 2, lty = 2) 
+
+summary(profit_discount_model)
+
+
+# ----------------------------------------------------
+#---- Barplot for testing the effect of region on Average Profit
+# ----------------------------------------------------
+
+barplot(mean_profit$Profit,
+        names.arg = mean_profit$Region,
+        main = "Average Profit by Region",
+        xlab = "Region",
+        ylab = "Average Profit",
+        col = "blue")
+#______________________________________
 
 dev.off()
